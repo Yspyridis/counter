@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>Counter</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="">
+<head>
+  <link rel="stylesheet" href="css/counter.css">
+  <link rel="stylesheet" href="css/dp-dark.css">
+</head>
+<script src="js/counter.js"></script>
+<script defer src="js/datepicker.js"></script>
+<body onload="init()">
+
+<main class="main">
+  <div class="counter-wrapper">
+    <div onclick="set_image()" class="counter-image">
+      <img id="image" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAMFBMVEXh6vH////5+vrl7fPv8/f0+fzt9Pbf6vD+/f/j6/Lf6vL///3f6fLr8fbv8/by9vm0HxD7AAACbUlEQVR4nO3c65abIBRAYVHTDALx/d+2VBuDII6zLHro2t/fmEn2HETn2jQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADkG29irNHa4I9G9+qu83B2BTauu01JIIYUUUkghhbcX/ipFTGH3LKOTUmi6Qq/QGQrLovA8Ckuj8LzqC/98A2ZX5YXd2Lajf6beOaTmwm5+tnnsBNZc+NTt/OaNanWT/U5hzYWjWjzyh1VSqK1ONpTPW/fyz66kcHCqixJtHwSqPvvUKgq1D/Rjik61MZzhWPd5aJ3fTfwR6yn+P4XzBFU8RevCwvzPJCoo9IFmepdmPUUdFuqaZzgt0fcUw8T+88Ar/wrSC/UywemgcKE+7Tg/ZNRY8V2bDScYT9G6r+mdu+fOK8guXE8wmaK/Vet6980PPmUXDvEEVXLRCL942lwGkguny0RSmF76//ILuh/SE1JyYXIObk/xzfn17NJH5BZ+LvSHpmjno10yRbmFySYTDHFjivONnZ9iHC+3MLNE31NcJy7zNsn9m9DC9DIRTXG9UD977jTF1UIVWpjbZDJTDM/YeLsRWfjdBKMprj8d8RRFFm5d6Dca31OM99z1diOwMHehT01TTBe0WV00BBYem+AyRbdxcDhFgYX6YN80RZu5LTCSZ9gcLzSqz+xIZvloAgt/MsN8u+QZUkghhRRSSCGFFFJIIYWXFKqv85Towr3fcDpKSy78xygsjcLzKCyNwvPEFCpthxKsVlIKXVeGE1NYHoUUUkghhRRSeFfh2D6u0o53BOpmuOz/RA17f8MHAAAAAAAAAAAAAAAAAAAAAAAAAAAAALjcb3yLQG5tF3tgAAAAAElFTkSuQmCC"/>
+    </div>
+    <div class="counter-details">
+      <div class="counter-text">
+        <h1 id="title" onclick="edit_title()">Title</h1>
+        <p id="description" onclick="edit_description()">Description</p>
+        <p id="note" class="hide">s</p>
+        <!-- <br> -->
+      </div>
+      <div id="description-div" class="hide counter-buttons">
+        <div class="button-container">
+          <textarea id="desc"></textarea>
+        </div>
+        <div class="button-container hor-big-mar">
+          <button id="set_desc" onclick="set_desc()" class="desc-btn counter-btn">
+            <span>
+            <p>set</p>
+          </span>
+        </button>
+        </div>
+        <br>
+        <br><br><br>
+     </div>
+      <div class="counter-stats">
+        <div class="amount">
+          <span><p id="counter"></p></span>
+        </div>
+        <div class="time">
+          <img style="color: white; height:18px" src="icons/icons8-clock.svg"/>
+          <input type="text" id="date" placeholder="date started"/>
+        </div>
+      </div>
+    </div>
+    <div class="counter-buttons">
+     <div class="button-container">
+       <button onclick="increment()" class="custom-btn counter-btn"><span><img src="icons/icons8-plus.svg"/></span></button>
+     </div>
+     <div class="button-container hor-mar">
+       <button onclick="edit()" class="custom-btn counter-btn">
+         <span>
+         <img id="edit_icon" src="icons/icons8-edit.svg"/>
+         <input class="hide" id="edit_field" type="number"/>
+       </span>
+     </button>
+       <button id="set" onclick="set()" class="hide custom-btn counter-btn">
+         <span>
+         <p>set</p>
+       </span>
+     </button>
+     </div>
+     <div class="button-container hor-mar">
+       <button onclick="reset()" class="custom-btn counter-btn"><span><img src="icons/icons8-restart.svg"/></span></button>
+     </div>
+   </div>
+ </div>
+  </div>
+</main>
+
+  <script>
+    window.addEventListener("load", () => {
+      picker.attach({ target: "date" });
+    });
+  </script>
+</body>
+</html>

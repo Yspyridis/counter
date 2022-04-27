@@ -1,0 +1,351 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --blue: #1e698d;
+  --light-blue: #789fbb;
+  --dark-blue: #131925;
+  --lightest-blue: #c2d5db;
+  --white: hsl(0, 0%, 100%);
+  --transparent-white: hsl(200deg 100% 95% / 70%);
+  --transparent-dark: hsl(200deg 100% 15% / 60%);
+  --main-transition: 0.3s ease-in-out;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-size: 1.125rem;
+  font-family: "Outfit", sans-serif;
+  background: var(--dark-blue)
+}
+
+@media (max-width: 374px) {
+  body {
+    font-size: 0.875rem;
+  }
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  background: no-repeat center center / cover;
+  margin: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 50px 0;
+}
+
+.counter-wrapper {
+  min-width: 350px;
+  padding: 1.5rem;
+  border-radius: 0.625rem;
+  background-color: var(--light-blue)
+}
+
+@media (max-width: 374px) {
+  .counter-wrapper {
+    max-width: 90%;
+    padding: 1.125rem;
+    margin: auto;
+  }
+}
+
+@media (min-width: 640px) {
+  .counter-wrapper {
+    max-width: 350px;
+    padding-bottom: 1.875rem;
+  }
+}
+
+.counter-image {
+  position: relative;
+  max-height: 275px;
+  border-radius: 0.625rem;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+@media (min-width: 640px) {
+  .counter-image {
+    max-height: 275px;
+  }
+}
+
+.counter-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--light-white)
+    url(https://raw.githubusercontent.com/MohamedAridah/frontendmentor_nft-preview-counter-component/main/images/icon-view.svg)
+    no-repeat center center;
+  opacity: 0;
+  transition: all var(--main-transition);
+}
+
+.counter-image:hover::before {
+  opacity: 1;
+  width: 100%;
+  background: var(--transparent-white);
+}
+
+.counter-details {
+  padding-top: 1.5625rem;
+  padding-bottom: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .counter-details {
+    padding-bottom: 1.25rem;
+  }
+}
+
+.counter-text h1 {
+  color: var(--white);
+  font-size: 1.5rem;
+  margin-bottom: 1.125rem;
+  transition: color var(--main-transition);
+}
+
+@media (max-width: 374px) {
+  .counter-text h1 {
+    font-size: 1.25rem;
+  }
+}
+
+.counter-text p {
+  color: var(--lightest-blue);
+  margin-bottom: 1.25rem;
+  line-height: 1.5;
+  font-size: 1.05rem;
+}
+
+#note {
+  color: var(--white);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 374px) {
+  .counter-text p {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 640px) {
+  .counter-text p {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.counter-stats {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.counter-stats .amount,
+.counter-stats .time {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: white
+}
+
+.counter-stats .amount > span {
+  font-size: 1.1rem;
+}
+
+.counter-stats .time > span {
+  font-size: 0.9rem;
+}
+
+.counter-stats .amount > span {
+  color: var(--white);
+  font-weight: 700;
+}
+.counter-stats .time > span {
+  color: var(--white);
+}
+
+.time input {
+    width: 80px;
+    background: transparent;
+    color: var(--white);
+    border: None;
+}
+
+::placeholder {
+  color: var(--white);
+  opacity: 1; /* Firefox */
+}
+
+.counter-buttons {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-top: 1.275rem;
+  border-top: 1px solid lightgray;
+}
+#description-div {
+  border-top: None;
+  margin-top: -50px;
+}
+
+.counter-buttons .button-container {
+  width: 37px;
+  height: 37px;
+}
+
+@media (max-width: 374px) {
+  .counter-buttons .button-container {
+    width: 33px;
+    height: 33px;
+  }
+}
+
+.counter-buttons a {
+  color: var(--white);
+  margin-left: 2px;
+  transition: color var(--main-transition);
+}
+
+.counter-buttons a:hover {
+  color: var(--white);
+}
+
+.desc-btn, textarea {
+  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+  7px 7px 20px 0px rgba(0,0,0,.1),
+  4px 4px 5px 0px rgba(0,0,0,.1);
+}
+
+.custom-btn {
+  margin: 5px;
+  color: black;
+  border-radius: 3px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
+
+.counter-btn {
+  width: 70px;
+  height: 40px;
+  padding: 0;
+  border: none;
+}
+
+.counter-btn:before,
+.counter-btn:after {
+  position: absolute;
+  content: "";
+  right: 0;
+  top: 0;
+  background: white;
+  transition: all 0.3s ease;
+}
+.counter-btn:before {
+  height: 0%;
+  width: 2px;
+}
+.counter-btn:after {
+  width: 0%;
+  height: 2px;
+}
+.counter-btn:hover{
+  background: var(--blue);
+  box-shadow: none;
+}
+.counter-btn:hover:before {
+  height: 100%;
+}
+.counter-btn:hover:after {
+  width: 100%;
+}
+.counter-btn span:hover{
+   color: white;
+}
+.counter-btn span:before,
+.counter-btn span:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  background: white;
+  transition: all 0.3s ease;
+}
+.counter-btn span:before {
+  width: 2px;
+  height: 0%;
+}
+.counter-btn span:after {
+  width: 0%;
+  height: 2px;
+}
+.counter-btn span:hover:before {
+  height: 100%;
+}
+.counter-btn span:hover:after {
+  width: 100%;
+}
+.counter-btn span {
+  margin-left: : 33%;
+}
+
+.hor-mar {
+    margin-left: 60px
+}
+
+.hor-big-mar {
+    margin-left: 175px
+}
+
+button img {
+  height: 100%;
+  margin-left: 15px;
+  padding: 10px
+}
+
+button input {
+  width: 100%;
+  height: 100%;
+  padding: 10px
+}
+
+.hide{
+  display:none;
+}
+.show{
+  display:block;
+}
+.show-flex{
+  display:flex;
+}
