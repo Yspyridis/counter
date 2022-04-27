@@ -54,7 +54,7 @@ a {
 }
 
 .counter-wrapper {
-  min-width: 350px;
+  max-width: 350px;
   padding: 1.5rem;
   border-radius: 0.625rem;
   background-color: var(--light-blue)
@@ -62,7 +62,7 @@ a {
 
 @media (max-width: 374px) {
   .counter-wrapper {
-    max-width: 90%;
+    max-width: 60%;
     padding: 1.125rem;
     margin: auto;
   }
